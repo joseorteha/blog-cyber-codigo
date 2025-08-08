@@ -1,23 +1,65 @@
-# Cyber Código - Blog de Tecnología
+# 🚀 Cyber Código - Blog de Tecnología
 
-Un blog moderno y elegante construido con Next.js 14, TypeScript, Tailwind CSS y Supabase.
+Un blog moderno y elegante de tecnología construido con **Next.js 14**, **TypeScript**, **Tailwind CSS** y **Supabase**. Diseñado para ser completamente responsive y optimizado para móviles.
 
-## 🚀 Características
+![Cyber Código Blog](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.3-38B2AC?style=for-the-badge&logo=tailwind-css)
+![Supabase](https://img.shields.io/badge/Supabase-2.0-3ECF8E?style=for-the-badge&logo=supabase)
 
-- **Diseño Cyberpunk**: Tema oscuro con gradientes cyan-purple-pink
-- **Autenticación**: Sistema completo de registro y login
-- **Panel Admin**: Gestión de posts y usuarios
-- **Comentarios**: Sistema de comentarios con reacciones
-- **Avatares**: Sistema de avatares predeterminados
-- **Noticias**: API de noticias tecnológicas en tiempo real
-- **Responsive**: Diseño completamente adaptativo
-- **SEO Optimizado**: Meta tags y estructura semántica
+## ✨ Características Principales
+
+### 🎨 **Diseño Moderno**
+- **Tema Cyberpunk** con gradientes cyan → purple → pink
+- **Carrusel automático** con animaciones fluidas
+- **Diseño completamente responsive** optimizado para móviles
+- **Efectos visuales avanzados** (glow, sparkles, shimmer)
+
+### 📱 **Optimización Móvil**
+- **Mobile-first design** con breakpoints optimizados
+- **Touch gestures** mejorados
+- **Performance optimizada** para dispositivos móviles
+- **Carrusel automático** con pausa en hover
+
+### 🔐 **Sistema de Autenticación**
+- **Supabase Auth** integrado
+- **Roles de usuario** (admin, user, editor, moderator)
+- **Perfiles personalizables** con avatares
+- **Panel de administración** protegido
+
+### 📝 **Gestión de Contenido**
+- **Editor Markdown** avanzado
+- **Categorías y tags** organizadas
+- **Posts destacados** y programación
+- **Sistema de comentarios** con reacciones
+
+### 🌐 **Integración de APIs**
+- **NewsAPI** para noticias tecnológicas
+- **Búsqueda inteligente** de artículos
+- **Filtros por categoría** y país
+- **Contenido dinámico** actualizado
+
+### ⚡ **Performance**
+- **Next.js 14 App Router**
+- **Static Generation** optimizada
+- **Image optimization** automática
+- **Caching inteligente**
+
+## 🛠️ Tecnologías Utilizadas
+
+- **Frontend**: Next.js 14, React 18, TypeScript
+- **Styling**: Tailwind CSS, shadcn/ui
+- **Backend**: Supabase (PostgreSQL, Auth, Storage)
+- **Animaciones**: CSS Native, Framer Motion
+- **Validación**: Zod
+- **Deployment**: Vercel (recomendado)
 
 ## 📋 Requisitos Previos
 
 - Node.js 18+ 
 - npm o yarn
 - Cuenta de Supabase
+- API Key de NewsAPI (opcional)
 
 ## 🛠️ Instalación
 
