@@ -56,7 +56,7 @@ export async function GET(request: NextRequest): Promise<NextResponse<PostsRespo
     const to = from + limit - 1
 
     const { data, error, count } = await query
-      .order('published_at', { ascending: false, nullsLast: true })
+      .order('published_at', { ascending: false })
       .order('created_at', { ascending: false })
       .range(from, to)
 
