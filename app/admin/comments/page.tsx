@@ -123,7 +123,7 @@ export default function CommentsAdminPage() {
 
       if (error) throw error
 
-      const statusCounts = (data || []).reduce((acc, comment) => {
+      const statusCounts = (data || []).reduce((acc: Record<string, number>, comment) => {
         acc[comment.status] = (acc[comment.status] || 0) + 1
         return acc
       }, {} as Record<string, number>)
