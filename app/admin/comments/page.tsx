@@ -160,11 +160,12 @@ export default function CommentsAdminPage() {
       // Refresh comments and stats
       fetchComments(activeTab)
       fetchStats()
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('Error updating comment:', error)
+      const errorMessage = error instanceof Error ? error.message : 'Error al actualizar comentario'
       toast({
         title: 'Error',
-        description: error.message || 'Error al actualizar comentario',
+        description: errorMessage,
         variant: 'destructive'
       })
     }

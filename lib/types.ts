@@ -21,7 +21,7 @@ export interface Author {
   email: string
   full_name?: string
   avatar_url?: string
-  role: 'admin' | 'user'
+  role: 'admin' | 'moderator' | 'user'
   created_at: string
 }
 

@@ -106,7 +106,7 @@ export default function NuevoPostPage() {
       console.log('📋 Categorías disponibles en BLOG_CATEGORIES:', BLOG_CATEGORIES)
       
       // Mapeo directo de categorías para evitar problemas de RLS
-      const categoryMap = {
+      const categoryMap: Record<string, string> = {
         'ia': 'f6c64f4d-e13d-4d59-b5e5-a30907c8e3bd',
         'smartphones': 'ca4ceaa5-c258-4a2d-81bc-c487472b4f10',
         'desarrollo-web': 'b230278f-0e4c-43f6-9abc-173990688936',
@@ -174,11 +174,12 @@ export default function NuevoPostPage() {
 
       // Redirect to admin panel
       router.push('/admin')
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('❌ Error creating post:', error)
+      const errorMessage = error instanceof Error ? error.message : 'Error al crear el post.'
       toast({
         title: 'Error',
-        description: error.message || 'Error al crear el post.',
+        description: errorMessage,
         variant: 'destructive'
       })
     } finally {

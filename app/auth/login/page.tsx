@@ -38,17 +38,19 @@ export default function LoginPage() {
 
       router.push('/')
       router.refresh()
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('Error logging in:', error)
       
       let errorMessage = 'Error al iniciar sesión. Verifica tus credenciales.'
       
-      if (error.message === 'Email not confirmed') {
-        errorMessage = 'Tu email no ha sido confirmado. Por favor, verifica tu bandeja de entrada o contacta al administrador.'
-      } else if (error.message === 'Invalid login credentials') {
-        errorMessage = 'Credenciales inválidas. Verifica tu email y contraseña.'
-      } else if (error.message.includes('Too many requests')) {
-        errorMessage = 'Demasiados intentos. Espera un momento antes de intentar nuevamente.'
+      if (error instanceof Error) {
+        if (error.message === 'Email not confirmed') {
+          errorMessage = 'Tu email no ha sido confirmado. Por favor, verifica tu bandeja de entrada o contacta al administrador.'
+        } else if (error.message === 'Invalid login credentials') {
+          errorMessage = 'Credenciales inválidas. Verifica tu email y contraseña.'
+        } else if (error.message.includes('Too many requests')) {
+          errorMessage = 'Demasiados intentos. Espera un momento antes de intentar nuevamente.'
+        }
       }
       
       toast({

@@ -158,11 +158,12 @@ export default function CommentsSection({ postId, postSlug }: CommentsSectionPro
 
       // Refresh comments
       fetchComments()
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('Error submitting comment:', error)
+      const errorMessage = error instanceof Error ? error.message : 'Error al enviar comentario'
       toast({
         title: 'Error',
-        description: error.message || 'Error al enviar comentario',
+        description: errorMessage,
         variant: 'destructive'
       })
     } finally {
@@ -187,11 +188,12 @@ export default function CommentsSection({ postId, postSlug }: CommentsSectionPro
       })
 
       fetchComments()
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('Error deleting comment:', error)
+      const errorMessage = error instanceof Error ? error.message : 'Error al eliminar comentario'
       toast({
         title: 'Error',
-        description: error.message || 'Error al eliminar comentario',
+        description: errorMessage,
         variant: 'destructive'
       })
     } finally {
@@ -212,7 +214,7 @@ export default function CommentsSection({ postId, postSlug }: CommentsSectionPro
   const canEditComment = (comment: Comment) => {
     const isModerator = author?.role === 'admin' || author?.role === 'moderator'
     const isAuthor = comment.author?.id === user?.id
-    return isModerator || isAuthor
+    return Boolean(isModerator || isAuthor)
   }
 
   const CommentItem = ({ comment, depth = 0 }: { comment: Comment; depth?: number }) => (
