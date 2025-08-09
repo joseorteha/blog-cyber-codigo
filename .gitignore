@@ -123,3 +123,5 @@ public/uploads/
 
 # Cache
 .cache/
+.next
+.vercel
