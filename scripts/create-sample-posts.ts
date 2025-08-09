@@ -460,13 +460,11 @@ La ciberseguridad se ha convertido en una prioridad crítica en un mundo cada ve
 ## Estrategias de Defensa
 
 ### 1. Zero Trust Architecture
-```
-Principios fundamentales:
+**Principios fundamentales:**
 - Never trust, always verify
 - Least privilege access
 - Assume breach mentality
 - Continuous monitoring
-```
 
 ### 2. Extended Detection and Response (XDR)
 - **Unified security platform**
