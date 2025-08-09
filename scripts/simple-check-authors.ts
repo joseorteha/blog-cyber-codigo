@@ -70,7 +70,7 @@ async function simpleCheckAuthors() {
     console.log('\n📋 Verificando políticas RLS...')
     const { data: policies, error: policiesError } = await supabase
       .rpc('get_policies', { table_name: 'authors' })
-      .catch(() => ({ data: null, error: { message: 'Función no disponible' } }))
+      // .catch(() => ({ data: null, error: { message: 'Función no disponible' } })) // No supported method
 
     if (policiesError) {
       console.log('⚠️ No se pudieron obtener las políticas RLS')

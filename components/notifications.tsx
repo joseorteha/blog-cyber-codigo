@@ -53,7 +53,7 @@ export default function Notifications() {
       if (error) throw error
 
       setNotifications(data || [])
-      setUnreadCount(data?.filter(n => !n.read_at).length || 0)
+      setUnreadCount(data?.filter((n: { read_at: string | null }) => !n.read_at).length || 0)
     } catch (error) {
       console.error('Error fetching notifications:', error)
     } finally {

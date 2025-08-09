@@ -11,7 +11,7 @@ export function middleware(request: NextRequest) {
   response.headers.set('Referrer-Policy', 'origin-when-cross-origin')
 
   // Rate limiting headers (basic implementation)
-  const ip = request.ip ?? request.headers.get('x-forwarded-for') ?? 'unknown'
+  const ip = (request as any).ip ?? request.headers.get('x-forwarded-for') ?? 'unknown'
   response.headers.set('X-RateLimit-IP', ip)
 
   // Handle CORS for API routes

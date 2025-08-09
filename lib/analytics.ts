@@ -78,7 +78,7 @@ export async function getBlogStats() {
       .select('view_count')
       .eq('published', true)
 
-    const totalViews = viewData?.reduce((sum, post) => sum + (post.view_count || 0), 0) || 0
+    const totalViews = viewData?.reduce((sum: number, post: { view_count?: number }) => sum + (post.view_count || 0), 0) || 0
 
     // Total comments
     const { count: totalComments } = await supabase

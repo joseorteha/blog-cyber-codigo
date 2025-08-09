@@ -203,11 +203,12 @@ export default function EditarPostPage({ params }: { params: Promise<{ id: strin
 
       // Redirect to admin panel
       router.push('/admin')
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('Error updating post:', error)
+      const errorMessage = error instanceof Error ? error.message : 'Error al actualizar el post.'
       toast({
         title: 'Error',
-        description: error.message || 'Error al actualizar el post.',
+        description: errorMessage,
         variant: 'destructive'
       })
     } finally {

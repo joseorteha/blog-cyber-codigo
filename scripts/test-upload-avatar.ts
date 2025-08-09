@@ -62,7 +62,7 @@ async function uploadImage(file: File, folder: string = 'avatars') {
     return {
       url: '',
       path: '',
-      error: error.message || 'Error al subir imagen'
+      error: error instanceof Error ? error.message : 'Error al subir imagen'
     }
   }
 }

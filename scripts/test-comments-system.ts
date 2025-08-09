@@ -16,7 +16,7 @@ async function testCommentsSystem() {
     console.log('\n📋 Verificando comentarios existentes...')
     const { data: comments, error: commentsError } = await supabase
       .from('comments')
-      .select('id, content, author_name, status, created_at')
+      .select('id, content, author_name, status, created_at, parent_id')
       .order('created_at', { ascending: false })
 
     if (commentsError) {
@@ -90,8 +90,8 @@ async function testCommentsSystem() {
 
     // 6. Verificar estructura de comentarios
     console.log('\n🔍 Verificando estructura de comentarios...')
-    const commentsWithReplies = comments.filter(c => c.parent_id !== null)
-    const rootComments = comments.filter(c => c.parent_id === null)
+    const commentsWithReplies = comments.filter((c: any) => c.parent_id !== null)
+    const rootComments = comments.filter((c: any) => c.parent_id === null)
     
     console.log(`  - Comentarios raíz: ${rootComments.length}`)
     console.log(`  - Respuestas: ${commentsWithReplies.length}`)

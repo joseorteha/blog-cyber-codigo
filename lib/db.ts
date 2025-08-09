@@ -1,4 +1,5 @@
-import { PrismaClient } from '@prisma/client'
+// import { PrismaClient } from '@prisma/client' // Not used in production
+type PrismaClient = any
 
 const globalForPrisma = globalThis as unknown as {
   prisma: PrismaClient | undefined

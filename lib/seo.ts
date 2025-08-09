@@ -109,8 +109,8 @@ export function generatePostMetadata(post: Post, author?: Author): Metadata {
       name: author.full_name || author.email,
       url: author.avatar_url 
     }] : undefined,
-    publishedTime: post.published_at || post.created_at,
-    modifiedTime: post.updated_at,
+    // publishedTime: post.published_at || post.created_at, // Not supported in Next.js metadata
+    // modifiedTime: post.updated_at, // Not supported in Next.js metadata
     openGraph: {
       type: 'article',
       locale: seoConfig.locale,

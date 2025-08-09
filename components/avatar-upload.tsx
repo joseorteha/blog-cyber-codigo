@@ -86,11 +86,11 @@ export default function AvatarUpload({
         description: 'Tu foto de perfil se ha actualizado correctamente'
       })
 
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('Error uploading avatar:', error)
       toast({
         title: 'Error',
-        description: error.message || 'Error al subir la imagen',
+        description: error instanceof Error ? error.message : 'Error al subir la imagen',
         variant: 'destructive'
       })
     } finally {
@@ -122,11 +122,11 @@ export default function AvatarUpload({
         description: 'Tu foto de perfil se ha eliminado'
       })
 
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('Error removing avatar:', error)
       toast({
         title: 'Error',
-        description: error.message || 'Error al eliminar el avatar',
+        description: error instanceof Error ? error.message : 'Error al eliminar el avatar',
         variant: 'destructive'
       })
     } finally {

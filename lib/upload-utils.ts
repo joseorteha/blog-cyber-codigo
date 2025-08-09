@@ -62,12 +62,12 @@ export async function uploadImage(
       path: filePath
     }
     
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Upload error:', error)
     return {
       url: '',
       path: '',
-      error: error.message || 'Error al subir imagen'
+      error: error instanceof Error ? error.message : 'Error al subir imagen'
     }
   }
 }

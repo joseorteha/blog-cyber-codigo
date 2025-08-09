@@ -26,7 +26,7 @@ async function testAvatarUpload() {
       console.log('✅ Bucket avatars existe')
       console.log(`  - Nombre: ${avatarsBucket.name}`)
       console.log(`  - Público: ${avatarsBucket.public}`)
-      console.log(`  - Tamaño máximo: ${avatarsBucket.fileSizeLimit} bytes`)
+      console.log(`  - Tamaño máximo: ${avatarsBucket.file_size_limit} bytes`)
     } else {
       console.log('❌ Bucket avatars no encontrado')
     }
