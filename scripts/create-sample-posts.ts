@@ -1,4 +1,4 @@
-import { createSupabaseServerClient } from '../lib/supabase'
+import { createClient } from '@supabase/supabase-js'
 
 interface SamplePost {
   title: string
@@ -589,7 +589,18 @@ La ciberseguridad en 2024 requiere un enfoque holístico que combine tecnología
 async function createSamplePosts() {
   console.log('🚀 Iniciando creación de posts de ejemplo...')
   
-  const supabase = await createSupabaseServerClient()
+  // Create Supabase client with service role key for admin operations
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
+  
+  if (!supabaseUrl || !supabaseServiceKey) {
+    console.error('❌ Variables de entorno faltantes:')
+    console.error('   - NEXT_PUBLIC_SUPABASE_URL:', !!supabaseUrl)
+    console.error('   - SUPABASE_SERVICE_ROLE_KEY:', !!supabaseServiceKey)
+    return
+  }
+  
+  const supabase = createClient(supabaseUrl, supabaseServiceKey)
 
   // Verificar conexión
   const { data: testConnection, error: connectionError } = await supabase
